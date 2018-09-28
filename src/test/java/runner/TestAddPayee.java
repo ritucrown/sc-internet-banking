@@ -28,14 +28,14 @@ public class TestAddPayee {
 	
   @Test
   public void testAddPayee() {
-	  home = new Home(driver);
+	  home = new Home();
 	  home.addPayee();
 	 	 
   }
  
   @Test(priority =0, dataProvider = "LoginDetail")
   public void login(String strUser, String strPass){
-	  login = new Login(driver);
+	  login = new Login();
 	  login.setUser(strUser);
 	  login.setPassword(strPass);
 	  login.submit();
@@ -58,7 +58,7 @@ public class TestAddPayee {
   
   @AfterTest
   public void afterTest() {
-	 home.Logout();
+	 login.Logout();
   }
 
 }

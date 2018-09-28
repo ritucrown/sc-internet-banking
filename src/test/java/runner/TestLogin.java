@@ -40,7 +40,7 @@ public class TestLogin extends ConfigFileReader {
   @Test(enabled = true, dataProvider = "LoginDataExcel")
   public void TestLogin(Object strUsername, Object strPassword) {
 	  logger = reports.startTest("TestLogin");
-	  Login login = new Login(driver);
+	  Login login = new Login();
 	  login.setUser(strUsername.toString());
 	  login.setPassword(strPassword.toString());
 	  loginStatus=login.submit();
@@ -73,7 +73,7 @@ public class TestLogin extends ConfigFileReader {
 
   @AfterMethod
   public void afterMethod(ITestResult result) {
-	  Login login = new Login(driver);
+	  Login login = new Login();
 	 
 	  if (result.getStatus() == ITestResult.FAILURE) {
 		logger.log(LogStatus.FAIL, result.getName()+" Test is failed");

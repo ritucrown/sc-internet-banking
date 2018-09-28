@@ -8,8 +8,8 @@ import dataprovider.ConfigFileReader;
 
 public class TestBase {
 
-	private static WebDriver driver;
-	ConfigFileReader config = new ConfigFileReader();
+	public static WebDriver driver;
+	ConfigFileReader config;
 	public WebDriver getFirefoxDriver() {
 		return driver = new FirefoxDriver();
 	}
@@ -20,5 +20,8 @@ public class TestBase {
 		System.getProperty(config.getChrome(),config.getDriverPath());
 		driver = new ChromeDriver();
 		return driver;
+	}
+	public void getConfigReader() {
+		config = new ConfigFileReader();
 	}
 }

@@ -7,7 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Home extends Login{
+import runner.TestBase;
+
+public class Home extends TestBase{
 
 	@FindBy(xpath ="//*[text() = 'Transfers']")
 	WebElement Transfer;
@@ -29,9 +31,8 @@ public class Home extends Login{
 	WebElement radioSearch;
 	
 	
-	public Home(WebDriver driver) {
+	public Home() {
 		// TODO Auto-generated constructor stub
-		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	

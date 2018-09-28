@@ -8,9 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Login {
-	WebDriver driver;
-	
+import runner.TestBase;
+
+public class Login extends TestBase {
+		
 	WebElement j_username;
 	WebElement j_password;
 	WebElement Login;
@@ -18,10 +19,10 @@ public class Login {
 	@FindBy(xpath = "//*[text()=' Welcome PALIMKAR RITESH TREMBAKRAO. ']")
 	WebElement heading;
 	
-	public Login(WebDriver driver) {
+	public Login() {
 		// TODO Auto-generated constructor stub
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
+		
 	}
 
 	public void setUser(String strUser) {
